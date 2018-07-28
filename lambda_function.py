@@ -1,6 +1,5 @@
 import os
 import requests
-import json
 
 JIRA_URL = os.environ["JIRA_URL"]
 JIRA_USERNAME = os.environ["JIRA_USERNAME"]
