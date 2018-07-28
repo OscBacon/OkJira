@@ -32,7 +32,7 @@ def lambda_handler(event, context):
                         auth=(JIRA_USERNAME, JIRA_TOKEN))
     if rv.status_code == 201:
         response_data = rv.json()
-        ticket_key = "SQR-1234"
+        ticket_key = response_data["key"]
         return {
             "fulfillmentText": "Ticket created with key {}".format(ticket_key),
             "fulfillmentMessages":  [{
