@@ -11,14 +11,9 @@ JIRA_IMAGE_URL = "https://atlassianblog.wpengine.com/wp-content/uploads/2017/11/
 def lambda_handler(event, context):
     parameters = event["queryResult"]["parameters"]
 
-    title = parameters.get("title")
-    issue_type = parameters.get("issue-type")
-    description = parameters.get("description")
-
-    print(title, issue_type, description)
-    if not title or not issue_type or not description:
-        return json.dumps({"fulfillmentText":
-                           "Hm... Something went wrong. \n Try again!"})
+    title = parameters["title"]
+    issue_type = parameters["issue-type"]
+    description = parameters["description"]
 
     fields = {
         "project": {"key": PROJECT_KEY},
