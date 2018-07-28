@@ -22,7 +22,6 @@ def lambda_handler(event, context):
     }
 
     components = parameters.get("components")
-    print(components)
     if components:
         fields["components"] = [{"name": component}
                                 for component in components]
