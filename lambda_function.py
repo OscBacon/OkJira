@@ -39,7 +39,6 @@ def lambda_handler(event, context):
                 "card": {
                     "title": title.capitalize(),
                     "subtitle": description.capitalize(),
-                    "formattedText": "Created ticket {}".format(ticket_key),
                     "imageUri": JIRA_IMAGE_URL,
                     "buttons": [{
                         "text": "View ticket",
